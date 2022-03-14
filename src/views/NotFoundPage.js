@@ -2,9 +2,6 @@ import React from 'react';
 
 /* self imports */
 
-/* styles */
-import './NotFoundPage.css';
-
 const NotFoundPage = props => {
     return (
         <div>

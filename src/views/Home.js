@@ -2,13 +2,12 @@ import React from 'react';
 
 /* self imports */
 
-/* styles */
-import './Home.css';
-
 const Home = props => {
     return (
         <div>
             <h1>Init</h1>
+            <button className='btn'>Default</button>
+            <button className='btn-primary'>Primary</button>
         </div>
     );
 }

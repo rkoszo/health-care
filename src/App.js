@@ -4,7 +4,7 @@ import React from 'react';
 import Routing from './Routing';
 
 /* styles */
-import './App.css';
+import './css/styles.min.css';
 
 const App = () => {
   return (
