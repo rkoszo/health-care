@@ -1,13 +1,12 @@
 import React from 'react';
 
 /* self imports */
+import Navbar from '../components/Navbar';
 
 const Home = props => {
     return (
         <div>
-            <h1>Init</h1>
-            <button className='btn'>Default</button>
-            <button className='btn-primary'>Primary</button>
+            <Navbar />
         </div>
     );
 }
