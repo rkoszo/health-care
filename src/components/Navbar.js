@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 /* self imports */
 
@@ -17,11 +17,22 @@ const Navbar = () => {
       }
     };
 
+    window.addEventListener("resize", isMediumScreen);
+
     isMediumScreen();
 
-    window.addEventListener("resize", isMediumScreen);
     return () => window.removeEventListener("resize", isMediumScreen);
   }, []);
+
+  useEffect(() => {
+    const closeMenuOnClickEvent = () => {
+      if (isMenuActive) closeMenu();
+    };
+
+    window.addEventListener("click", closeMenuOnClickEvent);
+
+    return () => window.removeEventListener("click", closeMenuOnClickEvent);
+  }, [isMenuActive]);
 
   const resetMenuSettings = () => {
     const navItems = document.querySelector("#nav__items");
@@ -48,7 +59,7 @@ const Navbar = () => {
     <nav>
       <div className="container">
         <a href="h3" className="nav__logo">
-          <h3>Health Care</h3>
+          <h3>HealthCare</h3>
         </a>
 
         <ul id="nav__items">
@@ -66,7 +77,7 @@ const Navbar = () => {
           </li>
           <li>
             <a href="/appointment" className="btn">
-              Make
+              Make Appointment
             </a>
           </li>
         </ul>
