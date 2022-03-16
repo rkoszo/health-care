@@ -1,14 +1,18 @@
-import React from 'react';
+import React from "react";
 
 /* self imports */
-import Navbar from '../components/Navbar';
+import Navbar from "../components/Navbar";
+import Header from "../components/Header";
+import Services from "../components/Services";
 
-const Home = props => {
-    return (
-        <div>
-            <Navbar />
-        </div>
-    );
-}
+const Home = (props) => {
+  return (
+    <div>
+      <Navbar />
+      <Header />
+      <Services />
+    </div>
+  );
+};
 
 export default Home;
