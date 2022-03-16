@@ -12,7 +12,7 @@ const Navbar = () => {
       if (mediumScreen.matches) {
         setShowMenu(true);
       } else {
-        closeMenu();
+        resetMenuSettings();
         setShowMenu(false);
       }
     };
@@ -22,6 +22,13 @@ const Navbar = () => {
     window.addEventListener("resize", isMediumScreen);
     return () => window.removeEventListener("resize", isMediumScreen);
   }, []);
+
+  const resetMenuSettings = () => {
+    const navItems = document.querySelector("#nav__items");
+    if (navItems && navItems.style.display) navItems.style = {};
+
+    setIsMenuActive(false);
+  };
 
   const closeMenu = () => {
     const navItems = document.querySelector("#nav__items");
@@ -59,7 +66,7 @@ const Navbar = () => {
           </li>
           <li>
             <a href="/appointment" className="btn">
-              Make Appointment
+              Make
             </a>
           </li>
         </ul>
