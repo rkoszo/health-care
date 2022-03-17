@@ -7,11 +7,11 @@ import Services from "../components/Services";
 
 const Home = (props) => {
   return (
-    <div>
+    <>
       <Navbar />
       <Header />
       <Services />
-    </div>
+    </>
   );
 };
 

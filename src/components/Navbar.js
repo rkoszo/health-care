@@ -1,8 +1,42 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 
-/* self imports */
+const MenuListItem = (props) => {
+  const { href, name, className = {} } = props;
 
-const Navbar = () => {
+  return (
+    <li>
+      <a href={href} className={className}>
+        {name}
+      </a>
+    </li>
+  );
+};
+
+const Navbar = ({
+  menuItems = [
+    {
+      href: "/",
+      name: "Home",
+    },
+    {
+      href: "/services",
+      name: "Services",
+    },
+    {
+      href: "/specialists",
+      name: "Specialists",
+    },
+    {
+      href: "/testimonials",
+      name: "Testimonials",
+    },
+    {
+      href: "/appointment",
+      name: "Make Appointment",
+      className: "btn",
+    },
+  ],
+}) => {
   const [showMenu, setShowMenu] = useState(false);
   const [isMenuActive, setIsMenuActive] = useState(false);
 
@@ -55,6 +89,10 @@ const Navbar = () => {
     setIsMenuActive(true);
   };
 
+  const menuListItems = menuItems.map((item) => (
+    <MenuListItem key={item.name} {...item} />
+  ));
+
   return (
     <nav>
       <div className="container">
@@ -62,25 +100,7 @@ const Navbar = () => {
           <h3>HealthCare</h3>
         </a>
 
-        <ul id="nav__items">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/services">Services</a>
-          </li>
-          <li>
-            <a href="/specialists">Specialists</a>
-          </li>
-          <li>
-            <a href="/testimonials">Testimonials</a>
-          </li>
-          <li>
-            <a href="/appointment" className="btn">
-              Make Appointment
-            </a>
-          </li>
-        </ul>
+        <ul id="nav__items">{menuListItems}</ul>
 
         {showMenu && (
           <>
