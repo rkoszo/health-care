@@ -15,7 +15,7 @@ const ServiceCard = (props) => {
 };
 
 const Services = ({
-  cardInfo = [
+  serviceCardInfos = [
     {
       icon: "bx bx-book-content",
       title: "Online Booking",
@@ -54,19 +54,19 @@ const Services = ({
     },
   ],
 }) => {
-  const cardItems = cardInfo.map((info) => (
+  const serviceCardItems = serviceCardInfos.map((info) => (
     <ServiceCard key={info.title} {...info} />
   ));
 
   return (
-    <section>
+    <section id="services">
       <h2>Our Services</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
 
-      <div className="container">{cardItems}</div>
+      <div className="container">{serviceCardItems}</div>
     </section>
   );
 };

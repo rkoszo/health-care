@@ -1,4 +1,4 @@
-section {
+#services {
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -32,7 +32,7 @@ section {
 
 /* ==================== MEDIA QUERIES (MEDIUM DEVICES) ==================== */
 @media screen and (max-width: 1024px) {
-  section {
+  #services {
     .container {
       gap: 1rem;
       grid-template-columns: 1fr 1fr;
@@ -51,7 +51,7 @@ section {
 
 /* ==================== MEDIA QUERIES (SMALL DEVICES) ==================== */
 @media screen and (max-width: 600px) {
-  section {
+  #services {
     .container {
       grid-template-columns: 1fr;
 

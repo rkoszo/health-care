@@ -4,6 +4,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Services from "../components/Services";
+import Specialists from "../components/Specialists";
+import Testimonials from "../components/Testimonials";
 
 const Home = (props) => {
   return (
@@ -11,6 +13,8 @@ const Home = (props) => {
       <Navbar />
       <Header />
       <Services />
+      <Specialists />
+      <Testimonials />
     </>
   );
 };

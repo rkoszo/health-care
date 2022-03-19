@@ -15,23 +15,23 @@ const MenuListItem = (props) => {
 const Navbar = ({
   menuItems = [
     {
-      href: "/",
+      href: "#",
       name: "Home",
     },
     {
-      href: "/services",
+      href: "#services",
       name: "Services",
     },
     {
-      href: "/specialists",
+      href: "#specialists",
       name: "Specialists",
     },
     {
-      href: "/testimonials",
+      href: "#testimonials",
       name: "Testimonials",
     },
     {
-      href: "/appointment",
+      href: "#appointment",
       name: "Make Appointment",
       className: "btn",
     },
