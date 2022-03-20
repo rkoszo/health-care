@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Services from "../components/Services";
 import Specialists from "../components/Specialists";
 import Testimonials from "../components/Testimonials";
+import Appointment from "../components/Appointment";
 
 const Home = (props) => {
   return (
@@ -15,6 +16,7 @@ const Home = (props) => {
       <Services />
       <Specialists />
       <Testimonials />
+      <Appointment />
     </>
   );
 };
