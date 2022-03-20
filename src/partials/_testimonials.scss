@@ -28,7 +28,8 @@
     }
 
     .swiper-pagination {
-      // TODO - place the pagination under the slides
+      position: relative;
+      margin-top: 1.5rem;
     }
 
     .swiper-pagination-bullet {

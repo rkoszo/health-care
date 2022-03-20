@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -87,6 +87,20 @@ const Testimonials = ({
     </SwiperSlide>
   ));
 
+  useLayoutEffect(() => {
+    const positionSwiperPaginationUnderSlides = () => {
+      const queryResult = document.querySelectorAll(".swiper-pagination");
+      if (queryResult.length) {
+        const paginationNode = queryResult[0];
+        const parentNode = paginationNode.parentNode;
+
+        parentNode.appendChild(paginationNode);
+      }
+    };
+
+    positionSwiperPaginationUnderSlides();
+  }, []);
+
   return (
     <section id="testimonials">
       <h2>What Our Patients Say</h2>
@@ -96,6 +110,7 @@ const Testimonials = ({
       </p>
 
       <Swiper
+        id="swiper"
         className="container"
         modules={[Pagination]}
         spaceBetween={30}
