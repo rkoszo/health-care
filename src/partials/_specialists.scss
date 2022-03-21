@@ -114,10 +114,21 @@
   }
 }
 
+/* ==================== MEDIA QUERIES (LARGE DEVICES) ==================== */
+@media screen and (max-width: 1600px) {
+  #specialists {
+    .container {
+      width: 54%;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
 /* ==================== MEDIA QUERIES (MEDIUM DEVICES) ==================== */
 @media screen and (max-width: 1024px) {
   #specialists {
     .container {
+      width: 68%;
       grid-template-columns: 1fr 1fr;
     }
   }
