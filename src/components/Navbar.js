@@ -114,7 +114,7 @@ const Navbar = ({
   return (
     <nav>
       <div className="container">
-        <a href="h3" className="nav__logo">
+        <a href="#" className="nav__logo">
           <h3>HEALTHCARE</h3>
         </a>
 
