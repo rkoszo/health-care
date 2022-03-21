@@ -21,7 +21,11 @@ nav {
       }
 
       a {
-        color: $black-color;
+        color: $dark-color;
+
+        &:hover {
+          color: $black-color;
+        }
 
         & > h3 {
           color: $black-color;
@@ -52,9 +56,13 @@ nav {
   }
 
   a {
-    color: $white-color;
-    font-weight: 400;
+    color: $light-color;
+    font-weight: 500;
     font-size: 0.9rem;
+
+    &:hover {
+      color: $white-color;
+    }
   }
 
   .nav__logo h3 {
