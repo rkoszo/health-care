@@ -42,8 +42,7 @@ const Navbar = ({
 
   useLayoutEffect(() => {
     const isMediumScreen = () => {
-      const mediumScreen = window.matchMedia("(max-width: 1024px)");
-      if (mediumScreen.matches) {
+      if (window.innerWidth < 1024) {
         setShowMenu(true);
       } else {
         resetMenuSettings();
@@ -51,21 +50,40 @@ const Navbar = ({
       }
     };
 
+    const changeNavbarStyleOnScroll = () => {
+      document
+        .querySelector("nav")
+        .classList.toggle("window-scroll", window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", changeNavbarStyleOnScroll);
     window.addEventListener("resize", isMediumScreen);
 
     isMediumScreen();
 
-    return () => window.removeEventListener("resize", isMediumScreen);
+    return () => {
+      window.removeEventListener("scroll", changeNavbarStyleOnScroll);
+      window.removeEventListener("resize", isMediumScreen);
+    };
   }, []);
 
   useEffect(() => {
-    const closeMenuOnClickEvent = () => {
-      if (isMenuActive) closeMenu();
+    let navItems;
+
+    if (isMenuActive) {
+      navItems = document.querySelectorAll("#nav__items li a");
+      navItems.forEach((navItem) => {
+        navItem.addEventListener("click", closeMenu);
+      });
+    }
+
+    return () => {
+      if (navItems) {
+        navItems.forEach((navItem) => {
+          navItem.removeEventListener("click", closeMenu);
+        });
+      }
     };
-
-    window.addEventListener("click", closeMenuOnClickEvent);
-
-    return () => window.removeEventListener("click", closeMenuOnClickEvent);
   }, [isMenuActive]);
 
   const resetMenuSettings = () => {
@@ -97,7 +115,7 @@ const Navbar = ({
     <nav>
       <div className="container">
         <a href="h3" className="nav__logo">
-          <h3>HealthCare</h3>
+          <h3>HEALTHCARE</h3>
         </a>
 
         <ul id="nav__items">{menuListItems}</ul>

@@ -18,6 +18,7 @@
         .specialist__image::before {
           left: 0;
           border-radius: 1rem;
+          backdrop-filter: blur(0.2rem);
         }
 
         .specialist__socials,
